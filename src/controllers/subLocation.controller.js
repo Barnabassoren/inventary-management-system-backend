@@ -59,8 +59,8 @@ export const updateSubLocation = async (req, res) => {
   try {
     const { id } = req.params;
     const { location, sub_location } = req.body;
-    console.log(req.body);
-
+    // console.log(req.body);
+    // console.log(id);
     if (!location || !sub_location) {
       return res.status(400).json({
         success: false,
@@ -110,7 +110,6 @@ export const deleteSubLocation = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: "Sub-location deleted successfully",
-      data: deletedSubLocation,
     });
   } catch (error) {
     return res.status(500).json({
